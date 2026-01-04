@@ -1,6 +1,8 @@
 import React from 'react'
 import { Spotlight } from './ui/Spotlight';
 import { cn } from "@/lib/utils";
+import { TextGenerateEffect } from './ui/TextGenerateEffect';
+import MagicButton from './ui/MagicButton';
 
 const Hero = () => {
   return (
@@ -38,11 +40,21 @@ const Hero = () => {
         <h2 className='uppercase tracking-widest text-center text-blue-100 text-xs max-w-80'>
           Dynamic Web Magic with Nextjs
         </h2>
+        <TextGenerateEffect 
+        className='text-center text-[45px] md:text-5xl lg:text-6xl'
+        words={'Transforming Concepts into Seamless Experiences'} />
+
+
+        <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-xl'>
+          Hi, I'm Raveesha Weerasinghe, An Associate Software Engineer proficient in .NET and Java. <br />
+          I am an aspiring Devops Engineer.
+        </p>
+       <a href="#about"> <MagicButton title="Show My Work" /> </a>
       </div>
 
     </div>
 
-    </div>
+    </div>  
     
   )
 }
