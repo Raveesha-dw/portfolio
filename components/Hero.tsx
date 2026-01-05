@@ -3,6 +3,7 @@ import { Spotlight } from './ui/Spotlight';
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import MagicButton from './ui/MagicButton';
+import { FaLocationArrow } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -49,7 +50,7 @@ const Hero = () => {
           Hi, I'm Raveesha Weerasinghe, An Associate Software Engineer proficient in .NET and Java. <br />
           I am an aspiring Devops Engineer.
         </p>
-       <a href="#about"> <MagicButton title="Show My Work" /> </a>
+       <a href="#about"> <MagicButton title="Show My Work" icon={<FaLocationArrow />} position={'right'} /> </a>
       </div>
 
     </div>
