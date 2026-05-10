@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBG";
 import { div } from "motion/react-client";
+import { GlobeDemo } from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -74,34 +75,41 @@ export const BentoGridItem = ({
             className={'object-center, object-cover w-full h-full'}
             />
           )}
-
+  
         </div>
 
        {id === 6 && (
-    
-          <BackgroundGradientAnimation>
+          <div className="absolute inset-0 rounded-3xl overflow-hidden">
+          <BackgroundGradientAnimation
+          >
             <div className="absolute z-50 flex items-center justify-center text-white font-bold"/>
           </BackgroundGradientAnimation>
+          </div>
             )}
-          <div className={cn(
+        <div className={cn(
             titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full lg:p-10 min-h-40 flex flex-col px-5 p-5'
           )}>
             <div className="font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base z-10 dark:text-neutral-300">
             {description}
             </div>
+          <div className="mb-2 font-sans font-bold text-md lg:text-2xl max-w-96 z-10">
+          {title}
           </div>
+        </div>
+
+        {id === 2 && <GlobeDemo/>}
+
 
       </div>
 
 
-      {/* {header} */}
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {/* {icon} */}
+    
+      {/* <div className="transition duration-200 group-hover/bento:translate-x-2">
         <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
           {title}
         </div>
        
-      </div>
+      </div> */}
 
        
     </div>
