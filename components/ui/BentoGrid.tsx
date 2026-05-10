@@ -1,4 +1,7 @@
 import { cn } from "@/lib/utils";
+import { BackgroundGradientAnimation } from "./GradientBG";
+import { div } from "motion/react-client";
+import { GlobeDemo } from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -47,8 +50,10 @@ export const BentoGridItem = ({
         className,
       )}
       style={{
-       background: '#01052e',
-      backgroundColor: 'linear-gradient(90deg,rgba(1, 5, 46, 1) 0%, rgba(42, 60, 84, 1) 50%, rgba(108, 158, 204, 1) 100%)',
+      //  background: '#01052e',
+      // backgroundColor: 'linear-gradient(90deg,rgba(1, 5, 46, 1) 0%, rgba(42, 60, 84, 1) 50%, rgba(108, 158, 204, 1) 100%)',
+      background: 'rgb(4,7,29)',
+      backgroundColor: 'linear-gradient(90deg, rgba(42, 99, 140, 1) 0%, rgba(28, 32, 77, 1) 51%, rgba(20, 4, 69, 1) 100%)'
       }}
     >
 
@@ -62,17 +67,51 @@ export const BentoGridItem = ({
         )}
         </div>
 
+        <div className={`absolute right-0 -bottom-5 ${id===5 && 'w-full opacity-80'}`}>
+          {spareImg && (
+            <img
+            src={spareImg}
+            alt={spareImg}
+            className={'object-center, object-cover w-full h-full'}
+            />
+          )}
+  
+        </div>
+
+       {id === 6 && (
+          <div className="absolute inset-0 rounded-3xl overflow-hidden">
+          <BackgroundGradientAnimation
+          >
+            <div className="absolute z-50 flex items-center justify-center text-white font-bold"/>
+          </BackgroundGradientAnimation>
+          </div>
+            )}
+        <div className={cn(
+            titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full lg:p-10 min-h-40 flex flex-col px-5 p-5'
+          )}>
+            <div className="font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base z-10 dark:text-neutral-300">
+            {description}
+            </div>
+          <div className="mb-2 font-sans font-bold text-md lg:text-2xl max-w-96 z-10">
+          {title}
+          </div>
+        </div>
+
+        {id === 2 && <GlobeDemo/>}
+
+
       </div>
-      {/* {header} */}
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {/* {icon} */}
+
+
+    
+      {/* <div className="transition duration-200 group-hover/bento:translate-x-2">
         <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
           {title}
         </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-          {description}
-        </div>
-      </div>
+       
+      </div> */}
+
+       
     </div>
   );
 };
